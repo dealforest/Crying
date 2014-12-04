@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: Crying.xcodeproj
+xcode_scheme: Crying
+xcode_sdk: iphonesimulator
