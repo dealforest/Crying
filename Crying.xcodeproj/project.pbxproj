@@ -10,6 +10,7 @@
 		5E096F2E1A30BECB004BE7FE /* Crying.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E096F2D1A30BECB004BE7FE /* Crying.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E096F3B1A30BECB004BE7FE /* CryingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E096F3A1A30BECB004BE7FE /* CryingTests.swift */; };
 		5E096F451A30BEEE004BE7FE /* Crying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E096F441A30BEEE004BE7FE /* Crying.swift */; };
+		5E25B6621A35C83A006E4AB5 /* Crying.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E096F281A30BECB004BE7FE /* Crying.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,6 +22,19 @@
 			remoteInfo = Crying;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E25B6611A35C833006E4AB5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E25B6621A35C83A006E4AB5 /* Crying.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5E096F281A30BECB004BE7FE /* Crying.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Crying.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +154,7 @@
 			buildConfigurationList = 5E096F411A30BECB004BE7FE /* Build configuration list for PBXNativeTarget "CryingTests" */;
 			buildPhases = (
 				5E096F2F1A30BECB004BE7FE /* Sources */,
+				5E25B6611A35C833006E4AB5 /* CopyFiles */,
 				5E096F301A30BECB004BE7FE /* Frameworks */,
 				5E096F311A30BECB004BE7FE /* Resources */,
 			);
@@ -400,6 +415,7 @@
 				5E096F401A30BECB004BE7FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E096F411A30BECB004BE7FE /* Build configuration list for PBXNativeTarget "CryingTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +424,7 @@
 				5E096F431A30BECB004BE7FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
