@@ -10,6 +10,24 @@ It will help your debugging cycle.
 * iOS 7.0+ / Mac OSX 10.9+
 * Xcode 6.1
 
+## Installation
+
+### Use [Carthage](https://github.com/Carthage/Carthage)
+
+
+> 1. Create a Cartfile that lists the frameworks you’d like to use in your project.
+2. Run carthage update. This will fetch dependencies into a Carthage.checkout folder, then build each one.
+3. On your application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop each framework you want to use from the Carthage.build folder on disk.
+
+Cartfile
+```
+github "dealforest/Crying"
+```
+
+### Drag the source code
+
+Please add `Crying.swift` file into your project
+
 ## Usage
 
 ### println
@@ -52,8 +70,19 @@ The face character `><` and `></` to express the sadness in Japan.
 
 Similar to the expression `:(`. so Crying!
 
+## FAQ
+
+### Don't use Crying with Cathage
+
+```
+dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire
+  Referenced from: ...
+  Reason: image not found
+```
+
+[Library not loaded エラー？ここを見直そう](http://qiita.com/kakipo/items/3cd87e00bc96bc3888b2)
+
 ## TODO
-- [ ] Support [Carthage](https://github.com/Carthage/Carthage)
 - [ ] Add caller to log
 
 ---
