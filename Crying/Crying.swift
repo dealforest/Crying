@@ -30,24 +30,16 @@ import Foundation
 
 prefix operator >< {}
 prefix public func ><<T> (value: T?) -> T {
-    if let v = value {
-        println("[\(NSDate())] \(v)")
-        return v
-    }
-    else {
-        abort()
-    }
+    let v  = value!
+    println("[\(NSDate())] \(v)")
+    return v
 }
 
 postfix operator >< {}
 postfix public func ><<T> (value: T?) -> T {
-    if let v = value {
-        println("[\(NSDate())] \(v)")
-        return v
-    }
-    else {
-        abort()
-    }
+    let v = value!
+    println("[\(NSDate())] \(v)")
+    return v
 }
 
 
@@ -55,24 +47,16 @@ postfix public func ><<T> (value: T?) -> T {
 
 prefix operator ></ {}
 prefix public func ></<T> (value: T?) -> T {
-    if let v = value {
-        print("[\(NSDate())] ")
-        debugPrintln(v)
-        return v
-    }
-    else {
-        abort()
-    }
+    let v = value!
+    print("[\(NSDate())] ")
+    debugPrintln(v)
+    return v
 }
 
 postfix operator ></ {}
 postfix public func ></<T> (value: T?) -> T {
-    if let v = value {
-        print("[\(NSDate())] ")
-        debugPrintln(v)
-        return v
-    }
-    else {
-        abort()
-    }
+    let v = value!
+    print("[\(NSDate())] ")
+    debugPrintln(v)
+    return v
 }
