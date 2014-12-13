@@ -32,6 +32,7 @@ prefix operator >< {}
 prefix public func ><<T> (value: T?) -> T {
     let v  = value!
     println("[\(NSDate())] \(v)")
+    printCaller()
     return v
 }
 
@@ -39,6 +40,7 @@ postfix operator >< {}
 postfix public func ><<T> (value: T?) -> T {
     let v = value!
     println("[\(NSDate())] \(v)")
+    printCaller()
     return v
 }
 
@@ -50,6 +52,7 @@ prefix public func ></<T> (value: T?) -> T {
     let v = value!
     print("[\(NSDate())] ")
     debugPrintln(v)
+    printCaller()
     return v
 }
 
@@ -58,5 +61,18 @@ postfix public func ></<T> (value: T?) -> T {
     let v = value!
     print("[\(NSDate())] ")
     debugPrintln(v)
+    printCaller()
     return v
+}
+
+func printCaller() {
+    // TODO: I want to replace backtrace.
+    // frame #2: 0x0000000104f252d9 CryingTests`CryingTests.CryingCallPoftfixTestCase.(obj=(text = "I'm so hungry...")) -> () -> ()).(implicit closure #1) + 89 at CryingTests.swift:72
+
+    var symbol = NSThread.callStackSymbols()[2] as String
+    // [2, CryingTests, 0x00000001085c62d9, _TFFC11CryingTests25CryingCallPoftfixTestCase20testCallPostfixValueFS0_FT_T_u_KT_GSqPSs9AnyObject__, +, 89]
+    let caller: [String] = split(symbol, { $0 == " " })
+    if caller.count >= 5 {
+        println("\tat \(caller[3]) L:\(caller[5])")
+    }
 }
