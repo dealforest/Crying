@@ -52,21 +52,37 @@ If you want to use `debugPrintln`, changing the `><` and `></`.
 
 ## Installation
 
-### Use [Carthage](https://github.com/Carthage/Carthage)
+> For application targets that do not support embedded frameworks, such as iOS 7, Crying can be integrated by including the `Crying.swift` source file directly. Yes, this sucks.
 
+_Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependency management, using Crying in your project requires the following steps:_
+
+1. Add Crying as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the command `git submodule add https://github.com/dealforest/Crying.git`
+2. Open the `Crying` folder, and drag `Crying.xcodeproj` into the file navigator of your app project.
+3. In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
+4. Ensure that the deployment target of Crying.framework matches that of the application target.
+5. In the tab bar at the top of that window, open the "Build Phases" panel.
+6. Expand the "Target Dependencies" group, and add `Crying.framework`.
+7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `Crying.framework`.
+
+### Use [Carthage](https://github.com/Carthage/Carthage)
 
 > 1. Create a Cartfile that lists the frameworks you’d like to use in your project.
 2. Run carthage update. This will fetch dependencies into a Carthage.checkout folder, then build each one.
 3. On your application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop each framework you want to use from the Carthage.build folder on disk.
 
-Write your Cartfile
+Write your `Cartfile`
 ```
 github "dealforest/Crying"
 ```
 
-### Drag the source code
+### Use CocoaPods
 
-Please add `Crying.swift` file into your project
+[CocoaPods Is Ready for Swift](http://swiftwala.com/cocoapods-is-ready-for-swift/)
+
+Write your `Podfile`
+```ruby
+pod 'Crying', :git => "https://github.com/dealforest/Crying.git", :branch => "podspec"
+```
 
 
 ## What does name mean?
@@ -80,7 +96,7 @@ Similar to the expression `:(`. so Crying!
 ### Don't use Crying with Cathage
 
 ```
-dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire
+dyld: Library not loaded: @rpath/Crying.framework/Crying
   Referenced from: ...
   Reason: image not found
 ```
