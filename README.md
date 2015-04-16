@@ -2,7 +2,7 @@
 [![Build Status](http://img.shields.io/travis/dealforest/Crying.svg?style=flat)](http://travis-ci.org/dealforest/Crying)
 [![Platform](http://img.shields.io/badge/platform-ios | osx-blue.svg?style=flat)](https://developer.apple.com/devcenter/ios/index.action)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
-[![Language](http://img.shields.io/badge/cathage-v0.0.2-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](http://img.shields.io/badge/license-MIT-333333.svg?style=flat)](http://travis-ci.org/dealforest/Crying)
 
 Crying is very simple print debug library written in Swift.
